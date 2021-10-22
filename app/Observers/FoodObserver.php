@@ -3,12 +3,13 @@
 namespace App\Observers;
 
 use App\Models\Food;
+use Illuminate\Support\Str;
 
 class FoodObserver
 {
     public function creating(Food $food)
     {
-        $food->slug = \Str::slug($food->name);
+        $food->slug = Str::slug($food->name);
     }
     /**
      * Handle the Food "created" event.
